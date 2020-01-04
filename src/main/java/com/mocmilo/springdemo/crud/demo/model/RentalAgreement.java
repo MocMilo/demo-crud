@@ -4,12 +4,28 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@NamedQueries({
+        @NamedQuery(
+                name = "getAllRentalAgreements",
+                query = "select ra from RentalAgreement ra order by ra.validFrom DESC"
+        ),
+        @NamedQuery(
+                name = "deleteAllRentalAgreements",
+                query = "delete from RentalAgreement ra"
+        ),
+        @NamedQuery(
+                name = "deleteRentalAgreementById",
+                query = "delete from RentalAgreement ra where ra.agreementId = :agreementId"
+        )
+})
+
+
 @Entity
 public class RentalAgreement implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rentalAgreementId;
+    private Long agreementId;
     private LocalDateTime validFrom;
     private String notes;
 
@@ -20,12 +36,12 @@ public class RentalAgreement implements Serializable {
     private RentalClient rentalClient;
 
 
-    public Long getRentalAgreementId() {
-        return rentalAgreementId;
+    public Long getAgreementId() {
+        return agreementId;
     }
 
     public void setRentalAgreementId(Long rentalAgreementId) {
-        this.rentalAgreementId = rentalAgreementId;
+        this.agreementId = rentalAgreementId;
     }
 
     public LocalDateTime getValidFrom() {

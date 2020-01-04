@@ -7,6 +7,21 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@NamedQueries({
+        @NamedQuery(
+                name = "getAllRentalClient",
+                query = "select rc from RentalClient rc order by rc.clientId DESC"
+        ),
+        @NamedQuery(
+                name = "deleteAllRentalClient",
+                query = "delete from RentalClient rc"
+        ),
+        @NamedQuery(
+                name = "deleteRentalClientById",
+                query = "delete from RentalClient rc where rc.clientId = :clientId"
+        )
+})
+
 @Entity
 public class RentalClient implements Serializable {
 

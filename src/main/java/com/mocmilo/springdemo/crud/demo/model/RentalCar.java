@@ -29,6 +29,7 @@ public class RentalCar implements Serializable {
     private Long carId;
     private String brand;
     private int payloadKG;
+    private String color;
 
     @Column(columnDefinition = "DECIMAL(19,6)") // accuracy of big decimal stored in db
     private BigDecimal pricePerHour;
@@ -74,5 +75,13 @@ public class RentalCar implements Serializable {
 
     public void setRentalAgreements(List<RentalAgreement> rentalAgreements) {
         this.rentalAgreements = rentalAgreements;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }

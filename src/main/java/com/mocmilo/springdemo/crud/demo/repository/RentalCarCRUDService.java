@@ -2,6 +2,7 @@ package com.mocmilo.springdemo.crud.demo.repository;
 
 
 import com.mocmilo.springdemo.crud.demo.model.RentalCar;
+import com.mocmilo.springdemo.crud.demo.model.RentalClient;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -126,8 +127,10 @@ public class RentalCarCRUDService implements JpaRepository<RentalCar, Long> {
     public void delete(RentalCar rentalCar) {
 
         Optional<RentalCar> car = findById(rentalCar.getCarId());
+
         if (car.isPresent()) {
             Long carId = car.get().getCarId();
+
             em.createNamedQuery("deleteRentalCarsById")
                     .setParameter("carId", carId)
                     .executeUpdate();
@@ -141,7 +144,8 @@ public class RentalCarCRUDService implements JpaRepository<RentalCar, Long> {
 
     @Override
     public void deleteAll() {
-
+        em.createNamedQuery("deleteAllRentalCars")
+                .executeUpdate();
     }
 
     @Override

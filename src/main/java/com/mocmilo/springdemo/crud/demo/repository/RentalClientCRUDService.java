@@ -117,14 +117,25 @@ public class RentalClientCRUDService implements JpaRepository<RentalClient, Long
     }
 
     @Override
-    public void deleteById(Long aLong) {
+    public void deleteById(Long id) {
 
+        Optional<RentalClient> rentalClient = findById(id);
+
+        rentalClient.ifPresent(c -> em.createNamedQuery("deleteRentalClientById", RentalClient.class)
+                .setParameter("clientId", c.getClientId())
+                .executeUpdate());
     }
 
     @Override
-    public void delete(RentalClient rentalClient) {
+    public void delete(RentalClient client) {
 
+        Optional<RentalClient> rentalClient = findById(client.getClientId());
+
+        rentalClient.ifPresent(c -> em.createNamedQuery("deleteRentalClientById", RentalClient.class)
+                .setParameter("clientId", c.getClientId())
+                .executeUpdate());
     }
+
 
     @Override
     public void deleteAll(Iterable<? extends RentalClient> iterable) {
@@ -134,6 +145,8 @@ public class RentalClientCRUDService implements JpaRepository<RentalClient, Long
     @Override
     public void deleteAll() {
 
+        em.createNamedQuery("deleteAllRentalClient")
+                .executeUpdate();
     }
 
     @Override
