@@ -1,4 +1,4 @@
-package com.mocmilo.springdemo.crud.demo;
+package com.mocmilo.springdemo.crud.demo.model;
 
 import javax.persistence.*;
 

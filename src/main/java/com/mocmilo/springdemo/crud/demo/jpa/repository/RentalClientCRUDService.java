@@ -1,4 +1,4 @@
-package com.mocmilo.springdemo.crud.demo.repository;
+package com.mocmilo.springdemo.crud.demo.jpa.repository;
 
 import com.mocmilo.springdemo.crud.demo.model.RentalClient;
 import org.springframework.data.domain.Example;

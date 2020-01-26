@@ -1,8 +1,7 @@
-package com.mocmilo.springdemo.crud.demo.repository;
+package com.mocmilo.springdemo.crud.demo.jpa.repository;
 
 
 import com.mocmilo.springdemo.crud.demo.model.RentalCar;
-import com.mocmilo.springdemo.crud.demo.model.RentalClient;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
