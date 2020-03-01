@@ -25,7 +25,6 @@ public class DBQueryMapUtil {
             return;
         }
 
-
         try {
             StringBuilder path = new StringBuilder();
             path.append("/").append("sql").append("/").append("CustomManagerQueries").append(".xml");

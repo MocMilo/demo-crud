@@ -38,4 +38,14 @@ public class RentalCarVO extends BaseVO {
     public void setPricePerHour(String pricePerHour) {
         this.pricePerHour = pricePerHour;
     }
+
+    @Override
+    public String toString() {
+        return "RentalCarVO{" +
+                "brand='" + brand + '\'' +
+                ", color='" + color + '\'' +
+                ", payloadKg='" + payloadKg + '\'' +
+                ", pricePerHour='" + pricePerHour + '\'' +
+                '}';
+    }
 }

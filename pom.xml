@@ -165,6 +165,13 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-broker</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-kahadb-store</artifactId>
+            <version>5.8.0</version>
+            <scope>test</scope>
+        </dependency>
+
 
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->

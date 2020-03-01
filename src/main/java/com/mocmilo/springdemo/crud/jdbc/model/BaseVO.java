@@ -1,6 +1,8 @@
 package com.mocmilo.springdemo.crud.jdbc.model;
 
-public abstract class BaseVO {
+import java.io.Serializable;
+
+public abstract class BaseVO implements Serializable {
 
     private String id;
 

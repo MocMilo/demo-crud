@@ -22,7 +22,6 @@ public class DemoApp {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DemoApp.class);
 
-
     @Bean
     public JmsListenerContainerFactory<?> customFactory(ConnectionFactory connectionFactory,
                                                         DefaultJmsListenerContainerFactoryConfigurer configurer) {
@@ -36,7 +35,7 @@ public class DemoApp {
     }
 
     @Bean // Serialize message content to json using TextMessage
-    public MessageConverter jacksonJmsDefaultMessageConverter() {
+    public MessageConverter messageConverter() {
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
         converter.setTargetType(MessageType.TEXT);
         converter.setTypeIdPropertyName("_type");
