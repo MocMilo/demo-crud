@@ -15,7 +15,7 @@
     <version>2.0-SNAPSHOT</version>
 
     <properties>
-        <start-class>com.mocmilo.springdemo.crud.DemoApp</start-class>
+        <start-class>com.mocmilo.springdemo.DemoApp</start-class>
     </properties>
 
     <dependencies>
@@ -157,6 +157,15 @@
             <version>8.0.13</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
         <dependency>
@@ -188,7 +197,7 @@
                 <version>2.0.1.RELEASE</version>
                 <configuration>
                     <executable>true</executable>
-                    <mainClass>com.mocmilo.springdemo.crud.DemoApp</mainClass>
+                    <mainClass>com.mocmilo.springdemo.DemoApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
